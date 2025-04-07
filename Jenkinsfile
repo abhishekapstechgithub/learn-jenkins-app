@@ -16,7 +16,7 @@ pipeline {
                     sh 'node --version'
                     sh 'npm --version'
                     sh 'which npm'
-                    sh '/usr/local/bin/npm cache clean -force'
+                    sh '/usr/local/bin/npm install -gf "https://github.com/abhishekapstechgithub/learn-jenkins-app.git"'
            
 
                     // Clean install dependencies and build the app
