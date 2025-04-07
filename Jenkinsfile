@@ -16,6 +16,7 @@ pipeline {
                     sh 'node --version'
                     sh 'npm --version'
                     sh 'which npm'
+                    sh '/usr/local/bin/npm cache clean -force'
            
 
                     // Clean install dependencies and build the app
