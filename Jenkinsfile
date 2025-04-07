@@ -19,8 +19,8 @@ pipeline {
            
 
                     // Clean install dependencies and build the app
-                    sh 'sudo npm ci'
-                    sh 'sudo npm run build'
+                    sh '/usr/local/bin/npm ci'
+                    sh '/usr/local/bin/npm run build'
                     
                     // Final directory listing to ensure files exist
                     sh 'ls -la'
