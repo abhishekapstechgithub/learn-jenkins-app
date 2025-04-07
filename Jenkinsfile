@@ -1,8 +1,6 @@
 pipeline {
     agent any  // Run the pipeline on any available node
 
-    environment {
-        NPM_CONFIG_CACHE = "${env.WORKSPACE}/.npm-cache"
 
     stages {
         stage('Build') {
