@@ -14,10 +14,17 @@ pipeline {
             }
             steps {
                 script {
-                    sh '''
-                        rm -rf node_modules package-lock.json .npm-cache
-                        npm ci --cache .npm-cache --prefer-offline
-                    '''
+                    // Printing out the directory contents and versions
+                    sh 'ls -la'
+                    sh 'rm -rf node_modules package-lock.json .npm-cache'
+                    sh 'npm install --cache .npm-cache'
+                    
+                    sh 'npm ci --cache .npm-cache --prefer-offline'
+
+                    sh 'npm run build'
+                    
+                    // Final directory listing to ensure files exist
+                    sh 'ls -la'
                 }
             }
         }
