@@ -19,6 +19,7 @@ pipeline {
            
 
                     // Clean install dependencies and build the app
+                    sh '/usr/local/bin/npm install'
                     sh '/usr/local/bin/npm ci'
                     sh '/usr/local/bin/npm run build'
                     
