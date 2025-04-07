@@ -15,6 +15,7 @@ pipeline {
                     sh 'ls -la'
                     sh 'node --version'
                     sh 'npm --version'
+                    sh 'which npm'
                     sh 'chown -R 114:121 "/.npm"'
 
                     // Clean install dependencies and build the app
