@@ -1,6 +1,9 @@
 pipeline {
     agent any  // Run the pipeline on any available node
 
+    environment {
+        NPM_CONFIG_CACHE = "${env.WORKSPACE}/.npm-cache"
+
     stages {
         stage('Build') {
             agent {
@@ -9,19 +12,11 @@ pipeline {
                     reuseNode true  // Reuse the workspace between stages
                 }
             }
-            steps {
-                script {
-                    // Printing out the directory contents and versions
-                    sh 'ls -la'
-                    sh 'rm -rf node_modules package-lock.json .npm-cache'
-                    sh 'npm install --cache .npm-cache'
-                    
-                    sh 'npm ci --cache .npm-cache --prefer-offline'
-
-                    sh 'npm run build'
-                    
-                    // Final directory listing to ensure files exist
-                    sh 'ls -la'
+            script {
+                    sh '''
+                        rm -rf node_modules package-lock.json .npm-cache
+                        npm ci --cache .npm-cache --prefer-offline
+                    '''
                 }
             }
         }
