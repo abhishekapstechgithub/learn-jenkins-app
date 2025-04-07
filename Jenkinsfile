@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:18-alpine'  // Use the Node.js Docker image
+                    image 'node:20'  // Use the Node.js Docker image
                     reuseNode true  // Reuse the workspace between stages
                 }
             }
