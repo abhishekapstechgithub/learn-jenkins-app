@@ -3,9 +3,6 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-               cleanWS()
-            }
             agent{
                 docker{
                     image 'node:18-alpine'
@@ -13,6 +10,7 @@ pipeline {
                 }
             }
             steps {
+                cleanWS()
                 sh '''
                 ls -la
                 sudo apt install git -y
