@@ -20,7 +20,7 @@ pipeline {
 
                     // Clean install dependencies and build the app
                     sh 'ls -la'
-                    sh 'npm install'
+                    sh 'npm install --no-optional'
                     sh 'npm ci'
                     sh 'npm run build'
                     
