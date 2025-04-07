@@ -12,7 +12,8 @@ pipeline {
                     reuseNode true  // Reuse the workspace between stages
                 }
             }
-            script {
+            steps {
+                script {
                     sh '''
                         rm -rf node_modules package-lock.json .npm-cache
                         npm ci --cache .npm-cache --prefer-offline
