@@ -16,13 +16,13 @@ pipeline {
                     sh 'node --version'
                     sh 'npm --version'
                     sh 'which npm'
-                    sh '/usr/local/bin/npm install -gf "https://github.com/abhishekapstechgithub/learn-jenkins-app.git"'
-           
+                    
 
                     // Clean install dependencies and build the app
-                    sh '/usr/local/bin/npm install'
-                    sh '/usr/local/bin/npm ci'
-                    sh '/usr/local/bin/npm run build'
+                    sh 'ls -la'
+                    sh 'npm install'
+                    sh 'npm ci'
+                    sh 'npm run build'
                     
                     // Final directory listing to ensure files exist
                     sh 'ls -la'
