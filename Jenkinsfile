@@ -10,7 +10,6 @@ pipeline {
                 }
             }
             steps {
-                cleanWS()
                 sh '''
                 ls -la
                 sudo apt install git -y
