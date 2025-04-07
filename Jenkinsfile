@@ -13,6 +13,8 @@ pipeline {
                 script {
                     // Printing out the directory contents and versions
                     sh 'ls -la'
+                    sh 'npm install --cache .npm-cache'
+                    sh 'rm -rf node_modules package-lock.json .npm-cache'
                     sh 'node --version'
                     sh 'npm --version'
                     sh 'which npm'
@@ -21,7 +23,7 @@ pipeline {
 
                     // Clean install dependencies and build the app
                     sh 'ls -la'
-                    sh 'npm install'
+                    sh 'npm install --unsafe-perm --cache .npm-cache'
                     sh 'npm ci'
                     sh 'npm run build'
                     
