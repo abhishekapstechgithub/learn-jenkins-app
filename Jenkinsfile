@@ -16,6 +16,7 @@ pipeline {
                     sh 'node --version'
                     sh 'npm --version'
                     sh 'which npm'
+                    sh 'rm -rf node_modules'
                     
 
                     // Clean install dependencies and build the app
