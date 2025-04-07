@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:20'  // Use the Node.js Docker image
+                    image 'node:18-alpine'  // Use the Node.js Docker image
                     reuseNode true  // Reuse the workspace between stages
                 }
             }
@@ -15,7 +15,7 @@ pipeline {
                     sh 'ls -la'
                     sh 'node --version'
                     sh 'npm --version'
-                    sh 'npm install'
+                    sh 'chown -R 114:121 "/.npm"'
 
                     // Clean install dependencies and build the app
                     sh 'npm ci'
