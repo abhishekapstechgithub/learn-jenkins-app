@@ -16,7 +16,7 @@ pipeline {
                     sh 'node --version'
                     sh 'npm --version'
                     sh 'which npm'
-                    sh 'chown -R 114:121 "/.npm"'
+                    sh 'chown -R 114:121 "/usr/local/bin/npm"'
 
                     // Clean install dependencies and build the app
                     sh 'npm ci'
