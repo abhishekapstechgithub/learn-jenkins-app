@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh '''
                 ls -la
+                sudo apt install git -y
                 sudo chown -R 114:121 "/.npm"
                 node --version
                 npm --version
